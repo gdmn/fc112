@@ -84,5 +84,6 @@
 // (defined here so config files can override it)
 #define USE_DYNAMIC_UNDERCLOCKING
 
+#define USE_PSEUDO_RAND
 
 #endif
