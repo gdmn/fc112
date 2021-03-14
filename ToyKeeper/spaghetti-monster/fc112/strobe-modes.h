@@ -20,25 +20,6 @@
 #ifndef STROBE_MODES_H
 #define STROBE_MODES_H
 
-// internal numbering for strobe modes
-#ifdef USE_STROBE_STATE
-typedef enum {
-    #ifdef USE_TACTICAL_STROBE_MODE
-    tactical_strobe_e,
-    #endif
-    #ifdef USE_BIKE_FLASHER_MODE
-    bike_flasher_e,
-    #endif
-    strobe_mode_END
-} strobe_mode_te;
-
-const int NUM_STROBES = strobe_mode_END;
-
-// which strobe mode is active?
-strobe_mode_te strobe_type = 0;
-#endif
-
-
 // full FET strobe can be a bit much...  use max regulated level instead,
 // if there's a bright enough regulated level
 #ifndef STROBE_BRIGHTNESS
@@ -49,16 +30,9 @@ strobe_mode_te strobe_type = 0;
 #endif
 #endif
 
-// party and tactical strobes
 #ifdef USE_STROBE_STATE
 uint8_t strobe_state(Event event, uint16_t arg);
 inline void strobe_state_iter();
-#endif
-
-#if defined(USE_TACTICAL_STROBE_MODE)
-// party / tactical strobe timing
-uint8_t strobe_delays[] = { 41, 67 };  // party strobe 24 Hz, tactical strobe 10 Hz
-inline void party_tactical_strobe_mode_iter(uint8_t st);
 #endif
 
 // bike mode config options

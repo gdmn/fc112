@@ -74,7 +74,6 @@
 
 // enable/disable various strobe modes
 #define USE_BIKE_FLASHER_MODE
-#define USE_TACTICAL_STROBE_MODE
 
 // enable a mode for locking the light for safe carry
 #define USE_LOCKOUT_MODE

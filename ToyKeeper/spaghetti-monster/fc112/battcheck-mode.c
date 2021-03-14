@@ -33,6 +33,8 @@ uint8_t battcheck_state(Event event, uint16_t arg) {
     else if (event == EV_2clicks) {
         #if defined(USE_BEACON_MODE)
         set_state(beacon_state, 0);
+        #elif defined(USE_STROBE_STATE)
+        set_state(strobe_state, 0);
         #endif
         return MISCHIEF_MANAGED;
     }

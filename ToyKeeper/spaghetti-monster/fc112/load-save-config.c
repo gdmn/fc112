@@ -26,11 +26,6 @@
 void load_config() {
     if (load_eeprom()) {
         ramp_style = eeprom[ramp_style_e];
-        #if defined(USE_TACTICAL_STROBE_MODE)
-        strobe_type = eeprom[strobe_type_e];  // TODO: move this to eeprom_wl?
-        strobe_delays[0] = eeprom[strobe_delays_0_e];
-        strobe_delays[1] = eeprom[strobe_delays_1_e];
-        #endif
         #ifdef USE_BIKE_FLASHER_MODE
         bike_flasher_brightness = eeprom[bike_flasher_brightness_e];
         #endif
@@ -58,11 +53,6 @@ void load_config() {
 
 void save_config() {
     eeprom[ramp_style_e] = ramp_style;
-    #if defined(USE_TACTICAL_STROBE_MODE)
-    eeprom[strobe_type_e] = strobe_type;  // TODO: move this to eeprom_wl?
-    eeprom[strobe_delays_0_e] = strobe_delays[0];
-    eeprom[strobe_delays_1_e] = strobe_delays[1];
-    #endif
     #ifdef USE_BIKE_FLASHER_MODE
     eeprom[bike_flasher_brightness_e] = bike_flasher_brightness;
     #endif

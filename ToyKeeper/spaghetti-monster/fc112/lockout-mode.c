@@ -36,9 +36,6 @@ uint8_t lockout_state(Event event, uint16_t arg) {
         uint8_t lvl = ramp_floors[0];
         if ((event & 0x0f) == 2) {  // second click
             if (ramp_floors[1] > lvl) lvl = ramp_floors[1];
-            #ifdef USE_MANUAL_MEMORY
-            if (manual_memory) lvl = manual_memory;
-            #endif
         } else {  // anything except second click
             if (ramp_floors[1] < lvl) lvl = ramp_floors[1];
         }
@@ -90,11 +87,6 @@ uint8_t lockout_state(Event event, uint16_t arg) {
 
     // 4 clicks: exit and turn on
     else if (event == EV_4clicks) {
-        #ifdef USE_MANUAL_MEMORY
-        if (manual_memory)
-            set_state(steady_state, manual_memory);
-        else
-        #endif
         set_state(steady_state, memorized_level);
         return MISCHIEF_MANAGED;
     }

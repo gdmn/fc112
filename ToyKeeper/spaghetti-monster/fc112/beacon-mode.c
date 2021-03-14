@@ -43,7 +43,9 @@ uint8_t beacon_state(Event event, uint16_t arg) {
 
     // 2 clicks: next blinky mode
     else if (event == EV_2clicks) {
-        #if defined(USE_BATTCHECK)
+        #if defined(USE_STROBE_STATE)
+        set_state(strobe_state, 0);
+        #elif defined(USE_BATTCHECK)
         set_state(battcheck_state, 0);
         #endif
         return MISCHIEF_MANAGED;

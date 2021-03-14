@@ -149,13 +149,6 @@ uint8_t off_state(Event event, uint16_t arg) {
     }
     #endif
 
-    // click, click, long-click: strobe mode
-    #ifdef USE_STROBE_STATE
-    else if (event == EV_click3_hold) {
-        set_state(strobe_state, 0);
-        return MISCHIEF_MANAGED;
-    }
-    #endif
     #ifdef USE_INDICATOR_LED
     // 7 clicks: change indicator LED mode
     else if (event == EV_7clicks) {

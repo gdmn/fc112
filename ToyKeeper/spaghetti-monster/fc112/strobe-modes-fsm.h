@@ -22,7 +22,7 @@
 
 // the presence of strobe mode(s) affects how many eeprom bytes we need,
 // so it's relevant for FSM configuration
-#if defined(USE_BIKE_FLASHER_MODE) || defined(USE_TACTICAL_STROBE_MODE)
+#if defined(USE_BIKE_FLASHER_MODE)
 #define USE_STROBE_STATE
 #endif
 

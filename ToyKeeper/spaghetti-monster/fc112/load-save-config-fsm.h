@@ -24,13 +24,6 @@
 #define USE_EEPROM
 typedef enum {
     ramp_style_e,
-    #ifdef USE_STROBE_STATE
-    strobe_type_e,
-    #endif
-    #if defined(USE_TACTICAL_STROBE_MODE)
-    strobe_delays_0_e,
-    strobe_delays_1_e,
-    #endif
     #ifdef USE_BIKE_FLASHER_MODE
     bike_flasher_brightness_e,
     #endif
