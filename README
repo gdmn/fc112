@@ -1,12 +1,20 @@
+THIS IS A CLONE OF BZR REPOSITORY
+=================================
+
+https://bazaar.launchpad.net/~toykeeper/flashlight-firmware/anduril2/revision/583
+
+
+
+
 ToyKeeper's flashlight firmware repository
 ==========================================
 
-This is a collection of firmware for flashlights or torches, mostly 
-collected from BLF (http://budgetlightforum.com/).  It's collected 
-here mostly for convenience, and to provide bug tracking and revision 
+This is a collection of firmware for flashlights or torches, mostly
+collected from BLF (http://budgetlightforum.com/).  It's collected
+here mostly for convenience, and to provide bug tracking and revision
 control services for the code.
 
-See the INDEX file to find out which projects might be relevant to 
+See the INDEX file to find out which projects might be relevant to
 your needs.
 
 
