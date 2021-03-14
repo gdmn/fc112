@@ -5,8 +5,9 @@ Source: https://bazaar.launchpad.net/~toykeeper/flashlight-firmware/anduril2/rev
 
 UI dev thread: https://budgetlightforum.com/node/75951
 
-![ui](https://raw.githubusercontent.com/gdmn/fc112/fc112/ToyKeeper/spaghetti-monster/fc112/uiatkto.png)
+HEX files to download: https://github.com/gdmn/fc112/tree/fc112/ToyKeeper/spaghetti-monster/fc112/hex
 
+![ui](https://github.com/gdmn/fc112/blob/fc112/spaghetti-monster/fc112/uiatkto.png)
 
 ToyKeeper's flashlight firmware repository
 ==========================================
