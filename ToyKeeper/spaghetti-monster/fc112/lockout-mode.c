@@ -99,11 +99,6 @@ uint8_t lockout_state(Event event, uint16_t arg) {
         set_state(steady_state, 1);
         return MISCHIEF_MANAGED;
     }
-    // 5 clicks: exit and turn on at ceiling level
-    else if (event == EV_5clicks) {
-        set_state(steady_state, MAX_LEVEL);
-        return MISCHIEF_MANAGED;
-    }
 
     #if defined(USE_INDICATOR_LED)
     // 7 clicks: rotate through indicator LED modes (lockout mode)

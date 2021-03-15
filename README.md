@@ -1,13 +1,15 @@
 FC112 FSM UI
 ============
 
-Source: https://bazaar.launchpad.net/~toykeeper/flashlight-firmware/anduril2/revision/583
+Source: [flashlight-firmware/anduril2/revision/583](https://bazaar.launchpad.net/~toykeeper/flashlight-firmware/anduril2/revision/583)
 
-UI dev thread: https://budgetlightforum.com/node/75951
+UI dev thread: [budgetlightforum.com/node/75951](https://budgetlightforum.com/node/75951)
 
-HEX files to download: https://github.com/gdmn/fc112/tree/fc112/ToyKeeper/spaghetti-monster/fc112/hex
+FC112 UI manual: [/gdmn/fc112/tree/fc112/ToyKeeper/spaghetti-monster/fc112/fc112-manual.md](https://github.com/gdmn/fc112/tree/fc112/ToyKeeper/spaghetti-monster/fc112/fc112-manual.md)
 
-![ui](https://github.com/gdmn/fc112/blob/fc112/spaghetti-monster/fc112/uiatkto.png)
+HEX files to download: [/gdmn/fc112/tree/fc112/ToyKeeper/spaghetti-monster/fc112/hex](https://github.com/gdmn/fc112/tree/fc112/ToyKeeper/spaghetti-monster/fc112/hex)
+
+The rest of original README file is below.
 
 ToyKeeper's flashlight firmware repository
 ==========================================
