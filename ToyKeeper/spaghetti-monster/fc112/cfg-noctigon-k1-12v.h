@@ -39,7 +39,7 @@
 // 10, 30, [50], 70, 90, 110, 130
 #define RAMP_DISCRETE_FLOOR 10
 #define RAMP_DISCRETE_CEIL  RAMP_SMOOTH_CEIL
-#define RAMP_DISCRETE_STEPS 7
+#define RAMP_DISCRETE_STEPS 4
 
 // stop panicking at ~70% power or ~600 lm
 #define THERM_FASTER_LEVEL 130

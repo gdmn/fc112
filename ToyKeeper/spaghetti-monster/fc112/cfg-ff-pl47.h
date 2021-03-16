@@ -50,7 +50,7 @@
 // 10, 28, 46, 65, 83, 101, 120  (83 is highest regulated)
 #define RAMP_DISCRETE_FLOOR 10
 #define RAMP_DISCRETE_CEIL  120
-#define RAMP_DISCRETE_STEPS 7
+#define RAMP_DISCRETE_STEPS 4
 
 // regulate down faster when the FET is active, slower otherwise
 #define THERM_FASTER_LEVEL 135  // throttle back faster when high

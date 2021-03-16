@@ -72,21 +72,26 @@ uint8_t off_state(Event event, uint16_t arg) {
     #endif  // B_TIMING_ON == B_PRESS_T
     // hold: go to lowest level
     else if (event == EV_click1_hold) {
-        #if (B_TIMING_ON == B_PRESS_T)
-        #ifdef MOON_TIMING_HINT
-        if (arg == 0) {
-            // let the user know they can let go now to stay at moon
-            blip();
-        } else
-        #endif
-        #else  // B_RELEASE_T or B_TIMEOUT_T
-        set_level(nearest_level(1));
-        #endif
-        // don't start ramping immediately;
-        // give the user time to release at moon level
-        //if (arg >= HOLD_TIMEOUT) {  // smaller
-        if (arg >= (!ramp_style) * HOLD_TIMEOUT) {  // more consistent
-            set_state(steady_state, 1);
+        if (ramp_style) {
+            // discrete mode
+            set_state(moon_mode_state, 1);
+        } else {
+            #if (B_TIMING_ON == B_PRESS_T)
+            #ifdef MOON_TIMING_HINT
+            if (arg == 0) {
+                // let the user know they can let go now to stay at moon
+                blip();
+            } else
+            #endif
+            #else  // B_RELEASE_T or B_TIMEOUT_T
+            set_level(nearest_level(1));
+            #endif
+            // don't start ramping immediately;
+            // give the user time to release at moon level
+            //if (arg >= HOLD_TIMEOUT) {  // smaller
+            if (arg >= (!ramp_style) * HOLD_TIMEOUT) {  // more consistent
+                set_state(steady_state, 1);
+            }
         }
         return MISCHIEF_MANAGED;
     }
@@ -114,7 +119,7 @@ uint8_t off_state(Event event, uint16_t arg) {
         #endif
         return MISCHIEF_MANAGED;
     }
-    // click, hold: momentary at ceiling or turbo
+    // click, hold: momentary at turbo
     else if (event == EV_click2_hold) {
         set_level(MAX_LEVEL);
         return MISCHIEF_MANAGED;

@@ -63,7 +63,7 @@
 // 10 33 56 79 102 125 [149]
 #define RAMP_DISCRETE_FLOOR 10
 #define RAMP_DISCRETE_CEIL RAMP_SMOOTH_CEIL
-#define RAMP_DISCRETE_STEPS 7
+#define RAMP_DISCRETE_STEPS 4
 
 // optional, makes initial turbo step-down faster so first peak isn't as hot
 // FET mode can run very very hot, so be extra careful

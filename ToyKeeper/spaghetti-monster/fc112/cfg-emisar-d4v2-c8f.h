@@ -5,6 +5,10 @@
 
 #define START_AT_MEMORIZED_LEVEL // dmn
 
+// set this light for 50C thermal ceiling
+#undef DEFAULT_THERM_CEIL
+#define DEFAULT_THERM_CEIL 50
+
 // this light has three aux LED channels: R, G, B
 #define USE_AUX_RGB_LEDS // dmn: must be enabled to use button led
 // it also has an independent LED in the button
@@ -36,14 +40,9 @@
 #define RAMP_SMOOTH_FLOOR 1
 #define RAMP_SMOOTH_CEIL  120
 // 10, 28, 46, [65], 83, 101, 120
-#define RAMP_DISCRETE_FLOOR 10
-#define RAMP_DISCRETE_CEIL  RAMP_SMOOTH_CEIL
-#define RAMP_DISCRETE_STEPS 7
-
-// safe limit ~20% power
-#define SIMPLE_UI_FLOOR RAMP_DISCRETE_FLOOR
-#define SIMPLE_UI_CEIL 95
-#define SIMPLE_UI_STEPS 5
+#define RAMP_DISCRETE_FLOOR 25
+#define RAMP_DISCRETE_CEIL  105
+#define RAMP_DISCRETE_STEPS 3
 
 // stop panicking at ~30% power or ~1200 lm
 #define THERM_FASTER_LEVEL 105

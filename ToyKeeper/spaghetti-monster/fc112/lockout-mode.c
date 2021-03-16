@@ -96,7 +96,12 @@ uint8_t lockout_state(Event event, uint16_t arg) {
         // reset button sequence to avoid activating anything in ramp mode
         current_event = 0;
         // ... and back to ramp mode
-        set_state(steady_state, 1);
+        if (ramp_style) {
+            // discrete mode
+            set_state(moon_mode_state, 1);
+        } else {
+            set_state(steady_state, 1);
+        }
         return MISCHIEF_MANAGED;
     }
 

@@ -101,6 +101,7 @@
 #include "config-mode.h"
 #include "aux-leds.h"
 #include "misc.h"
+#include "moon-mode.h"
 
 #ifdef USE_BATTCHECK_MODE
 #include "battcheck-mode.h"
@@ -127,6 +128,7 @@
 #include "config-mode.c"
 #include "aux-leds.c"
 #include "misc.c"
+#include "moon-mode.c"
 
 #ifdef USE_BATTCHECK_MODE
 #include "battcheck-mode.c"

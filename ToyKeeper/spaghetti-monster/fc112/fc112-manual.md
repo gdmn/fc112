@@ -8,11 +8,23 @@ While a flashlight is *OFF*
 
 - 1C: turn on at the memorized brightness
 - 1H: turn on at the floor level
+- 1H in stepped mode: turn on at the moon level
 - 2C: turn on at the ceiling level
 - 2H: momentary turbo
 - 3C: go to blinkies
 - 4C: lockout
 - 7C, 7H: aux leds configuration, please refer to Anduril2 manual
+
+Moon mode
+--
+
+Special mode in stepped ramp only. The same as the lowest level in smooth ramping mode.
+
+- 1H: lowest stepped mode
+- 1C: turn off
+- 2C: go to the ceiling level
+- 3C: switch to smooth ramp style
+- 4C: lockout mode
 
 Blinkies
 --
@@ -33,6 +45,8 @@ While a flashlight is *ON*
 While a flashlight is *locked*
 --
 
+- 1H: momentary moon
+- 2H: momentary low mode
 - 4C: unlock and ON
 - 4H: unlock and start at floor
 - 7C, 7H: aux leds configuration, please refer to Anduril2 manual

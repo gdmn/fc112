@@ -32,7 +32,7 @@
 // 20, 36, 53, [70], 86, 103, 120
 #define RAMP_DISCRETE_FLOOR 20 // 35 lm
 #define RAMP_DISCRETE_CEIL  120 // ~5400 lm
-#define RAMP_DISCRETE_STEPS 7  // 35, 108, 280, 626, 1500, 2930, 5400 lm
+#define RAMP_DISCRETE_STEPS 5  // 35, 108, 280, 626, 1500, 2930, 5400 lm
 
 #define THERM_FASTER_LEVEL 125  // throttle back faster when high (>6000 lm)
 #define THERM_HARD_TURBO_DROP  // this light is massively overpowered

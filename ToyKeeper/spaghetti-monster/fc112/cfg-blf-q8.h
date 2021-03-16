@@ -28,9 +28,10 @@
 #define RAMP_SMOOTH_FLOOR 1
 #define RAMP_SMOOTH_CEIL 120
 // 10 28 46 [65] 83 101 120
-#define RAMP_DISCRETE_FLOOR 10
-#define RAMP_DISCRETE_CEIL RAMP_SMOOTH_CEIL
-#define RAMP_DISCRETE_STEPS 7
+// 20, 42, [65], 87, 110
+#define RAMP_DISCRETE_FLOOR 20
+#define RAMP_DISCRETE_CEIL 110
+#define RAMP_DISCRETE_STEPS 5
 
 // stop panicking at ~75% power or ~3000 lm, this light has high thermal mass
 #define THERM_FASTER_LEVEL (RAMP_SIZE*9/10)  // throttle back faster when high

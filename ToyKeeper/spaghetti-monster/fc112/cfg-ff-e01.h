@@ -11,5 +11,5 @@
 // 20, 38, 56, 75, [93], 111, 130 (93 is highest regulated)
 // (9 / 45 / 116 / 248 / 467 / 742 / 1280 + 2140 lm)
 #undef RAMP_DISCRETE_STEPS
-#define RAMP_DISCRETE_STEPS 7
+#define RAMP_DISCRETE_STEPS 4
 

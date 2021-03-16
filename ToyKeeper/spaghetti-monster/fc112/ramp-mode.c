@@ -30,11 +30,6 @@ uint8_t steady_state(Event event, uint16_t arg) {
     static uint8_t level_before_off = 0;
     #endif
 
-    // make sure ramp globals are correct...
-    // ... but they already are; no need to do it here
-    //ramp_update_config();
-    //nearest_level(1);  // same effect, takes less space
-
     uint8_t mode_min = ramp_floor;
     uint8_t mode_max = ramp_ceil;
     uint8_t step_size;
@@ -48,7 +43,9 @@ uint8_t steady_state(Event event, uint16_t arg) {
             arg = memorized_level;
         }
         // remember this level, unless it's moon or turbo
-        if ((arg > mode_min) && (arg < mode_max))
+        if ((!ramp_style) && (arg > mode_min) && (arg < mode_max))
+            memorized_level = arg;
+        if (ramp_style && (arg < mode_max))
             memorized_level = arg;
         // use the requested level even if not memorized
         arg = nearest_level(arg);
@@ -69,11 +66,13 @@ uint8_t steady_state(Event event, uint16_t arg) {
         return MISCHIEF_MANAGED;
     }
     #endif  // if (B_TIMING_OFF == B_RELEASE_T)
+
     // 1 click: off
     else if (event == EV_1click) {
         set_state(off_state, 0);
         return MISCHIEF_MANAGED;
     }
+
     // 2 clicks: go to/from highest level
     else if (event == EV_2clicks) {
         if (actual_level < MAX_LEVEL) {

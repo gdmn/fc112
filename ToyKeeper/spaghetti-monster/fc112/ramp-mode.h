@@ -74,7 +74,7 @@
   #define RAMP_DISCRETE_CEIL RAMP_SMOOTH_CEIL
 #endif
 #ifndef RAMP_DISCRETE_STEPS
-  #define RAMP_DISCRETE_STEPS 7
+  #define RAMP_DISCRETE_STEPS 5
 #endif
 
 // ramping mode and its related config mode

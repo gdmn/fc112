@@ -32,7 +32,7 @@
 // 10, 28, 46, 65, [83], 101, 120
 #define RAMP_DISCRETE_FLOOR 10
 #define RAMP_DISCRETE_CEIL  RAMP_SMOOTH_CEIL
-#define RAMP_DISCRETE_STEPS 7
+#define RAMP_DISCRETE_STEPS 4
 
 // thermal regulation parameters
 #ifdef MIN_THERM_STEPDOWN

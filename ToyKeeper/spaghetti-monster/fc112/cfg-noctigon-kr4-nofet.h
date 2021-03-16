@@ -33,7 +33,7 @@
 // 10, 30, [50], 70, 90, 110, 130  (plus [150] on turbo)
 #define RAMP_DISCRETE_FLOOR 10
 #define RAMP_DISCRETE_CEIL  RAMP_SMOOTH_CEIL
-#define RAMP_DISCRETE_STEPS 7
+#define RAMP_DISCRETE_STEPS 4
 
 // stop panicking at ~90% power or ~1600 lm
 #undef THERM_FASTER_LEVEL
