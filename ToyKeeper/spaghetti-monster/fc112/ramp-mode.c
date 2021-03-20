@@ -102,25 +102,13 @@ uint8_t steady_state(Event event, uint16_t arg) {
         }
         // fix ramp direction on first frame if necessary
         if (!arg) {
-            // click, hold should always go down if possible
             if (event == EV_click2_hold) { ramp_direction = -1; }
-            // make it ramp down instead, if already at max
-            else if (actual_level >= mode_max) { ramp_direction = -1; }
-            // make it ramp up if already at min
-            // (off->hold->stepped_min->release causes this state)
-            else if (actual_level <= mode_min) { ramp_direction = 1; }
+            else if (event == EV_click1_hold) { ramp_direction = 1; }
         }
-        // if the button is stuck, err on the side of safety and ramp down
-        else if ((arg > TICKS_PER_SECOND * 5) && (actual_level >= mode_max)) {
-            ramp_direction = -1;
+        // wrap stepped mode to min
+        else if (ramp_style && (arg > TICKS_PER_SECOND * 1) && (actual_level >= mode_max)) {
+            actual_level = 1;
         }
-        #ifdef USE_LOCKOUT_MODE
-        // if the button is still stuck, lock the light
-        else if ((arg > TICKS_PER_SECOND * 10) && (actual_level <= mode_min)) {
-            blink_once();
-            set_state(lockout_state, 0);
-        }
-        #endif
         memorized_level = nearest_level((int16_t)actual_level \
                           + (step_size * ramp_direction));
         #if defined(BLINK_AT_RAMP_CEIL)
@@ -140,10 +128,8 @@ uint8_t steady_state(Event event, uint16_t arg) {
         set_level_and_therm_target(memorized_level);
         return MISCHIEF_MANAGED;
     }
-    // reverse ramp direction on hold release
     else if ((event == EV_click1_hold_release)
              || (event == EV_click2_hold_release)) {
-        ramp_direction = -ramp_direction;
         #ifdef START_AT_MEMORIZED_LEVEL
         save_config_wl();
         #endif
@@ -151,9 +137,6 @@ uint8_t steady_state(Event event, uint16_t arg) {
     }
 
     else if (event == EV_tick) {
-        // un-reverse after 1 second
-        if (arg == TICKS_PER_SECOND) ramp_direction = 1;
-
         #ifdef USE_SET_LEVEL_GRADUALLY
         int16_t diff = gradual_target - actual_level;
         static uint16_t ticks_since_adjust = 0;

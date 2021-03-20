@@ -3,6 +3,18 @@ FC112 FSM UI
 
 Please see original [Anduril2 UI manual](https://github.com/gdmn/fc112/tree/fc112/ToyKeeper/spaghetti-monster/anduril/anduril-manual.txt).
 
+Short summary
+--
+
+FC112 is designed to be simple. There are only 4 basic things to remember: 1C on/off, 1H/2H ramping, 
+3C special (some kind of configuration or special mode), 4C lockout. 
+
+Ramping direction
+--
+
+- 1H: ramp up
+- 2H: ramp down
+
 While a flashlight is *OFF*
 --
 
@@ -29,11 +41,18 @@ Special mode in stepped ramp only. The same as the lowest level in smooth rampin
 Blinkies
 --
 
+Available modes: battery check -> beacon -> bike flasher
+
 - 1C: turn off
 - 2C: advance to next mode
 
 While a flashlight is *ON*
 --
+
+Smooth ramp style: 1H and 2H always ramp in defined direction.
+
+Stepped ramp style: 1H and 2H always ramp in defined direction. If ramping up (1H), after ceiling flashlight goes to floor. 
+So: low -> medium -> high -> low -> ...
 
 - 1C: turn off
 - 1H: ramp up

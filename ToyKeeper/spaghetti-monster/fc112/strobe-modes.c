@@ -24,12 +24,9 @@
 
 #ifdef USE_STROBE_STATE
 uint8_t strobe_state(Event event, uint16_t arg) {
-    static int8_t ramp_direction = 1;
-
     if (0) {}  // placeholder
     // init anything which needs to be initialized
     else if (event == EV_enter_state) {
-        ramp_direction = 1;
         return MISCHIEF_MANAGED;
     }
     // 1 click: off
@@ -54,8 +51,8 @@ uint8_t strobe_state(Event event, uint16_t arg) {
         // biking mode brighter
         #ifdef USE_BIKE_FLASHER_MODE
         else {
-            bike_flasher_brightness += ramp_direction;
-            if (bike_flasher_brightness < 2) bike_flasher_brightness = 2;
+            bike_flasher_brightness += 1;
+            if (bike_flasher_brightness < 15) bike_flasher_brightness = 15;
             else if (bike_flasher_brightness > MAX_BIKING_LEVEL) bike_flasher_brightness = MAX_BIKING_LEVEL;
             set_level(bike_flasher_brightness);
         }
@@ -66,22 +63,21 @@ uint8_t strobe_state(Event event, uint16_t arg) {
     // reverse ramp direction on hold release
     // ... and save new strobe settings
     else if (event == EV_click1_hold_release) {
-        ramp_direction = -ramp_direction;
         save_config();
         return MISCHIEF_MANAGED;
     }
     // click, hold: change speed (go slower)
     //       or change brightness (dimmer)
     else if (event == EV_click2_hold) {
-        ramp_direction = 1;
-
         if (0) {}  // placeholder
 
         // biking mode dimmer
         #ifdef USE_BIKE_FLASHER_MODE
         else {
-            if (bike_flasher_brightness > 2)
-                bike_flasher_brightness --;
+            if (bike_flasher_brightness > 1)
+                bike_flasher_brightness -= 1;
+            if (bike_flasher_brightness < 15) bike_flasher_brightness = 15;
+            else if (bike_flasher_brightness > MAX_BIKING_LEVEL) bike_flasher_brightness = MAX_BIKING_LEVEL;
             set_level(bike_flasher_brightness);
         }
         #endif

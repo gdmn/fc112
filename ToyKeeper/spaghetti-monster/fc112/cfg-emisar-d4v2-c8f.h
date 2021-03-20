@@ -37,6 +37,12 @@
 #define HALFSPEED_LEVEL 14
 #define QUARTERSPEED_LEVEL 6
 
+// default ramp style: 0 = smooth, 1 = stepped
+#ifdef RAMP_STYLE
+#undef RAMP_STYLE
+#endif
+#define RAMP_STYLE 1
+
 #define RAMP_SMOOTH_FLOOR 1
 #define RAMP_SMOOTH_CEIL  120
 // 10, 28, 46, [65], 83, 101, 120
